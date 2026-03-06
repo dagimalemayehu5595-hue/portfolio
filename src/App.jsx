@@ -90,22 +90,8 @@ function ProjectCard({ project, onOpenImage, onOpenVideo }) {
             Live Demo
           </a>
         )}
-        {project.videoDemoUrl ? (
-          project.videoDemoUrl.toLowerCase().endsWith(".mp4") ? (
-            <button
-              type="button"
-              className="mini-link mini-link-button"
-              onClick={() => onOpenVideo({ src: project.videoDemoUrl, title: `${project.title} Video Demo` })}
-            >
-              Video Demo
-            </button>
-          ) : (
-            <a href={project.videoDemoUrl} target="_blank" rel="noreferrer" className="mini-link">
-              Video Demo
-            </a>
-          )
-        ) : (
-          <span className="mini-link mini-link-muted">Video Demo: Coming Soon</span>
+        {!project.demoUrl && (
+          <span className="mini-link mini-link-muted">Demo Link Needed</span>
         )}
       </div>
     </article>
@@ -164,8 +150,16 @@ function CreativeCard({ item, onOpenImage, onOpenVideo }) {
                 Video Demo
               </a>
             )
+          ) : imageSrc && !hasImageError ? (
+            <button
+              type="button"
+              className="mini-link mini-link-button"
+              onClick={() => onOpenImage({ src: imageSrc, alt: item.imageAlt })}
+            >
+              Preview Cover
+            </button>
           ) : (
-            <span className="mini-link mini-link-muted">Video Demo: Coming Soon</span>
+            <span className="mini-link mini-link-muted">Video File Needed</span>
           )
         ) : item.previewUrl ? (
           <a href={item.previewUrl} target="_blank" rel="noreferrer" className="mini-link">
@@ -277,7 +271,7 @@ function App() {
       category: "Video Editing",
       imageFile: "bulbula-gym-tiktok-cover.jpg",
       imageAlt: "Bulbula gym TikTok video edit cover placeholder",
-      previewUrl: ""
+      previewUrl: `${import.meta.env.BASE_URL}assets/bulbula-gym-tiktok-video.mp4`
     },
     {
       title: "Bulbula Gym Machines and Facility Showcase",
@@ -286,7 +280,7 @@ function App() {
       category: "Video Editing",
       imageFile: "bulbula-gym-machines-cover.jpg",
       imageAlt: "Bulbula gym machines and facility video cover placeholder",
-      previewUrl: ""
+      previewUrl: `${import.meta.env.BASE_URL}assets/bulbula-gym-machines-video.mp4`
     },
     {
       title: "Gym Meal Cafe Menu Design (Bulbula)",
@@ -463,7 +457,6 @@ function App() {
 
         <section id="creative" className="container panel reveal">
           <h2>Creative Work</h2>
-          <p className="section-note">Add your edited videos and designs here by replacing the preview files and links.</p>
           <div className="creative-grid">
             {creativeWork.map((item) => (
               <CreativeCard
@@ -582,4 +575,5 @@ function App() {
 }
 
 export default App;
+
 

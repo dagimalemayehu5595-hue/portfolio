@@ -4,4 +4,7 @@ dist/
 *.log
 npm-debug.log*
 .DS_Store
-public/assets/*.mp4
+public/assets/tenas cover.mp4
+public/assets/samrawit video demo.mp4
+public/assets/bulbula-gym-tiktok-video.mp4
+public/assets/bulbula-gym-machines-video.mp4
