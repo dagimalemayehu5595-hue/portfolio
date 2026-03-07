@@ -442,7 +442,6 @@ function App() {
 
         <section id="projects" className="container panel reveal">
           <h2>Projects</h2>
-          <p className="section-note">Replace placeholder links and screenshots with your real project proof to maximize credibility.</p>
           <div className="project-grid">
             {projects.map((project) => (
               <ProjectCard
@@ -575,5 +574,4 @@ function App() {
 }
 
 export default App;
-
 
