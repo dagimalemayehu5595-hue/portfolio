@@ -80,6 +80,13 @@ function ProjectCard({ project, onOpenImage, onOpenVideo }) {
       <p className="meta">
         <strong>Stack:</strong> {project.stack}
       </p>
+      {project.outcomes?.length > 0 && (
+        <ul className="metrics-list" aria-label={`${project.title} project outcomes`}>
+          {project.outcomes.map((outcome) => (
+            <li key={outcome}>{outcome}</li>
+          ))}
+        </ul>
+      )}
       <p className="deploy-badge" aria-label={`Deployment status: ${project.deploymentStatus}`}>
         Deployment: {project.deploymentStatus}
       </p>
@@ -238,6 +245,10 @@ function App() {
       imageAlt: "Screenshot placeholder for Tenas Gym Website",
       demoUrl: "https://dagimalemayehu5595-hue.github.io/Tenas/",
       videoDemoUrl: "",
+      outcomes: [
+        "Built responsive pages for gym services, classes, and public information.",
+        "Improved digital visibility for client services with clear call-to-action flows."
+      ],
       deploymentStatus: "Live"
     },
     {
@@ -249,6 +260,10 @@ function App() {
       imageAlt: "Screenshot placeholder for Samrawit Foundation Website",
       demoUrl: "https://dagimalemayehu5595-hue.github.io/samrawit/",
       videoDemoUrl: "",
+      outcomes: [
+        "Structured mission and program pages for easier public communication.",
+        "Implemented clean layout and content hierarchy for faster information access."
+      ],
       deploymentStatus: "Live"
     },
     {
@@ -259,6 +274,10 @@ function App() {
       imageFile: "gym-bot-cover.jpg",
       imageAlt: "Screenshot placeholder for Gym Client Meal and Workout Bot",
       videoDemoUrl: "",
+      outcomes: [
+        "Automated meal and workout plan delivery for gym clients through Telegram chat.",
+        "Enabled daily meal logging and follow-up prompts to support client consistency."
+      ],
       deploymentStatus: "Coming Soon"
     }
   ];
@@ -319,6 +338,36 @@ function App() {
     }
   ];
 
+  const services = [
+    {
+      title: "Full-Stack Website Development",
+      details: "Modern responsive websites with frontend, backend integration, and database support."
+    },
+    {
+      title: "Telegram Bot Development",
+      details: "Interactive Python bots for client communication, automation, and workflow support."
+    },
+    {
+      title: "Video Editing",
+      details: "Short-form social media edits, gym promotion videos, and branded storytelling content."
+    },
+    {
+      title: "Graphic Design",
+      details: "Promotional designs and menu layouts focused on readability, branding, and conversion."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Dagim delivered clean work, communicated clearly, and handled updates fast.",
+      source: "Client Feedback Placeholder"
+    },
+    {
+      quote: "Strong technical skills and practical problem-solving across web and bot development.",
+      source: "Project Collaboration Placeholder"
+    }
+  ];
+
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -346,6 +395,8 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#creative">Creative Work</a>
           <a href="#experience">Experience</a>
+          <a href="#services">Services</a>
+          <a href="#testimonials">Testimonials</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -376,16 +427,17 @@ function App() {
                 View Projects
               </a>
               <a
-                href={`${import.meta.env.BASE_URL}assets/Dagim_Alemayehu_CV.html`}
+                href={`${import.meta.env.BASE_URL}assets/Dagim_Alemayehu_CV.pdf`}
                 className="btn btn-ghost"
-                download="Dagim_Alemayehu_CV.html"
+                download="Dagim_Alemayehu_CV.pdf"
               >
-                Download CV
+                Download CV (PDF)
               </a>
               <a href="#contact" className="btn btn-ghost">
                 Contact Me
               </a>
             </div>
+            <p className="cv-note">If PDF download is missing, add `Dagim_Alemayehu_CV.pdf` in `public/assets`.</p>
           </div>
 
           <div className="hero-card">
@@ -483,6 +535,30 @@ function App() {
           </div>
         </section>
 
+        <section id="services" className="container panel reveal">
+          <h2>Services</h2>
+          <div className="project-grid">
+            {services.map((service) => (
+              <article key={service.title} className="experience-card">
+                <h3>{service.title}</h3>
+                <p>{service.details}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="testimonials" className="container panel reveal">
+          <h2>Testimonials</h2>
+          <div className="project-grid">
+            {testimonials.map((item, idx) => (
+              <article key={`${item.source}-${idx}`} className="experience-card testimonial-card">
+                <p className="testimonial-quote">"{item.quote}"</p>
+                <p className="testimonial-source">{item.source}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section id="education" className="container panel reveal">
           <h2>Education</h2>
           <div className="edu-grid">
@@ -500,6 +576,7 @@ function App() {
         <section id="contact" className="container panel reveal">
           <h2>Contact</h2>
           <p className="contact-intro">Open for internships, freelance work, and collaboration opportunities.</p>
+          <p className="contact-intro">Typical response time: within 24 hours.</p>
           <div className="contact-actions-row">
             <a href="mailto:dagimalemayehu5596@gmail.com" className="btn btn-primary">Email Me</a>
             <a href="https://t.me/dagi1755" target="_blank" rel="noreferrer" className="btn btn-ghost">Message on Telegram</a>
@@ -574,4 +651,3 @@ function App() {
 }
 
 export default App;
-
