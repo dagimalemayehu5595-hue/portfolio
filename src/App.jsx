@@ -302,6 +302,15 @@ function App() {
       previewUrl: `${import.meta.env.BASE_URL}assets/bulbula-gym-machines-video.mp4`
     },
     {
+      title: "Gym Aesthetic Video Edit",
+      description:
+        "Edited a video to highlight the gym's aesthetic, focusing on lighting, atmosphere, and the unique vibe of the space. The edit uses cinematic shots and color grading to emphasize the gym's visual appeal and inspire viewers.",
+      category: "Video Editing",
+      imageFile: "gym-aesthetic-cover.jpg",
+      imageAlt: "Gym aesthetic video cover placeholder",
+      previewUrl: `${import.meta.env.BASE_URL}assets/gym-aesthetic-video.mp4`
+    },
+    {
       title: "Gym Meal Cafe Menu Design (Bulbula)",
       description:
         "Designed a food and drink menu for a gym meal cafe in Bulbula with clear visual hierarchy, readable typography, and a clean brand-aligned layout.",
