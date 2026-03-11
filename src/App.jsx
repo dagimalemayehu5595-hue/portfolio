@@ -437,7 +437,6 @@ function App() {
                 Contact Me
               </a>
             </div>
-            <p className="cv-note">If PDF download is missing, add `Dagim_Alemayehu_CV.pdf` in `public/assets`.</p>
           </div>
 
           <div className="hero-card">
