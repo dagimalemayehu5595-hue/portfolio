@@ -258,7 +258,7 @@ function App() {
       stack: "React, HTML, CSS, JavaScript, Backend Integration",
       imageFile: "samrawit-foundation-cover.jpg",
       imageAlt: "Screenshot placeholder for Samrawit Foundation Website",
-      demoUrl: "https://dagimalemayehu5595-hue.github.io/samrawit/",
+      demoUrl: "https://samrawitfoundation.org.et",
       videoDemoUrl: "",
       outcomes: [
         "Structured mission and program pages for easier public communication.",
